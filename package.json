@@ -1,0 +1,25 @@
+{
+  "name": "note_taker",
+  "version": "1.0.0",
+  "description": "A note taking web-app utilizing express.js ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrimalOrB/note_taker.git"
+  },
+  "author": "Andrew Ogilvie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PrimalOrB/note_taker/issues"
+  },
+  "homepage": "https://github.com/PrimalOrB/note_taker#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
