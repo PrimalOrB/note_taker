@@ -41,5 +41,20 @@ router.post( '/', ( req, res ) => {
     }
 })
 
+    // notes delete route
+router.delete( '/*', ( req, res ) => {
+        // create object of request params and get values
+    var id = Object.values(req.params)[0]
+        // splice from array where id matches
+    db.splice(db.findIndex( line => line.id === id), 1)
+        // write file
+    fs.writeFileSync(
+        path.join( __dirname, '../../db/db.json' ),
+        JSON.stringify( db, null, 1 )
+    )
+        // responsd with db json
+    res.json(db)
+});
+
     // export
 module.exports = router;

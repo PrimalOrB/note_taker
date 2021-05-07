@@ -8,7 +8,7 @@ router.get( '/', ( req, res ) => {
     res.sendFile( path.join(__dirname, '../../public/index.html' ) );
 });
 
-// /notes route
+// notes route
 router.get( '/notes', ( req, res ) => {
     res.sendFile( path.join(__dirname, '../../public/notes.html' ) );
 });

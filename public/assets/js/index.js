@@ -90,6 +90,8 @@ const handleNoteDelete = (e) => {
   }
 
   deleteNote(noteId).then(() => {
+    $('.selected')
+      .removeClass('selected')
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -98,13 +100,24 @@ const handleNoteDelete = (e) => {
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
   e.preventDefault();
-  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
+  var target = $(e.target)
+    .closest('.list-group-item')
+  activeNote = JSON.parse(target[0].dataset.note);
+  $('.selected')
+    .removeClass('selected')
+  $(target)
+    .addClass('selected');
+  $('.note-title')
+    .addClass('selected')  
+
   renderActiveNote();
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
+  $('.selected')
+    .removeClass('selected')
   renderActiveNote();
 };
 
@@ -132,7 +145,6 @@ const renderNoteList = async (notes) => {
 
     const spanEl = document.createElement('span');
     spanEl.innerText = text;
-    spanEl.addEventListener('click', handleNoteView);
 
     liEl.append(spanEl);
 
@@ -142,7 +154,6 @@ const renderNoteList = async (notes) => {
         'fas',
         'fa-trash-alt',
         'float-right',
-        'text-danger',
         'delete-note'
       );
       delBtnEl.addEventListener('click', handleNoteDelete);
@@ -152,6 +163,7 @@ const renderNoteList = async (notes) => {
 
     return liEl;
   };
+ 
 
   if (jsonNotes.length === 0) {
     noteListItems.push(createLi('No saved Notes', false));
@@ -166,6 +178,9 @@ const renderNoteList = async (notes) => {
 
   if (window.location.pathname === '/notes') {
     noteListItems.forEach((note) => noteList[0].append(note));
+    $('.list-group').click('list-group-item', function(e){
+      handleNoteView(e)
+    })
   }
 };
 
