@@ -9,6 +9,7 @@ Express.js / Node.js application allowing users to create notes, persist them on
 * [Deployed Site](#deployed)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Built Using](#built)
 * [License](#license)
 * [Contribution](#contribution)
 * [Tests](#tests)
@@ -38,6 +39,12 @@ Express.js / Node.js application allowing users to create notes, persist them on
   * To delete a stored note
     * Click the ``trash can`` icon corresponding to the task you wish to delete
 
+## Built
+  * [Node.js](https://nodejs.org/en/)
+  * [Express.js](https://expressjs.com/)
+  * [Heroku](https://www.heroku.com/)
+  * [uniqid](https://www.npmjs.com/package/uniqid)
+
 ## License
 This application is covered under the [MIT](https://opensource.org/licenses/MIT) license.
 
@@ -46,7 +53,6 @@ This application is covered under the [MIT](https://opensource.org/licenses/MIT)
 
 ## Tests
   * There are no tests for this project
-
 
 ## Questions
 Please feel free to contact me regarding any further questions:
